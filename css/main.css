@@ -1,0 +1,483 @@
+
+/* Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+:root {
+    --main-color:#DA9F5B;
+    --second-color:#33211D;
+    --bg-section:#FFFBF2;
+    --hover-btn:#1b110f;
+    --hover-second-btn:#d38d3c;
+    --p-color: #555;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--bg-section);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto", sans-serif;
+    color: var(--second-color);
+}
+p {
+    color: var(--p-color);
+}
+
+
+.main-title::before {
+    content: "";
+    width: 2px;
+    height: 100px;
+    background-color: var(--main-color);
+    position: absolute;
+    left: 50%;
+    bottom: 90%;
+    transform: translateX(-50%);
+}
+.main-title h3 {
+    color: var(--main-color);
+    font-weight: 500;
+    letter-spacing: 5px;
+    font-size: 1.4375rem;
+}
+.main-title h4 {
+    color: var(--second-color);
+    font-weight: 700;
+    font-size: 3.125rem;
+}
+
+.to-top {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    background-color: var(--main-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: .5s;
+    opacity: 0;
+    animation: scrollTop 1s infinite alternate;
+}
+
+@keyframes scrollTop {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+/*! ****************************** Navbar ****************************** */
+.navbar {
+    transition: .5s all;
+}
+a.nav-link {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+.navbar-toggler,
+.navbar-toggler:focus {
+    border: none;
+    box-shadow: none;
+}
+nav .nav-link {
+    width: fit-content;
+    position: relative;
+}
+nav .nav-link.active {
+    color: var(--main-color) !important;
+}
+nav .nav-link::before {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+nav .nav-link.active::before {
+    width: 90%;
+    background-color: var(--main-color);
+}
+nav .dropdown-item.active {
+    background-color: var(--main-color);
+}
+nav .dropdown-item:focus {
+    background-color: var(--main-color);
+}
+
+/*! ****************************** Header ****************************** */
+header {
+    position: relative;
+    overflow: hidden;
+}
+header .caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 999;
+}
+header .caption p {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+header .caption p:first-of-type {
+    color: var(--main-color);
+}
+header .caption h2 {
+    font-size: 8rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+header img {
+    cursor: default;
+}
+.skitter.skitter-large {
+    max-width: 100%;
+}
+.skitter.skitter-large::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #281815b8;
+    inset: 0;
+    z-index: 99;
+}
+.skitter.skitter-large::after {
+    content: "";
+    position: absolute;
+    background-image: url(../images/overlay-bottom.png);
+    width: 100%;
+    height: 15px;
+    left: 0;
+    bottom: -1px;
+    z-index: 999;
+}
+/*! ****************************** About Section ****************************** */
+#about .left-part h3,
+#about .right-part h3 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--second-color);
+}
+#about .left-part h5 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-block: 15px;
+}
+#about .left-part p,
+#about .right-part p {
+    line-height: 1.5;
+    font-size: 1.125rem;
+    font-weight: 300;
+}
+#about .left-part button {
+    background-color: var(--second-color);
+    color: #fff;
+    transition: .5s;
+}
+#about .left-part button:hover {
+    background-color: var(--hover-btn);
+}
+#about .right-part button {
+    background-color: var(--main-color);
+    color: #000;
+    transition: .5s;
+}
+#about .right-part button:hover {
+    background-color: var(--hover-second-btn)
+}
+#about .right-part ul li h5 {
+    color: var(--main-color);
+}
+#about .right-part ul li p {
+    font-weight: 500;
+    color: var(--second-color);
+}
+/*! ****************************** Services Section ****************************** */
+#services .box-info i {
+    margin-right: 10px;
+    width: 2.8125rem;
+    height: 2.8125rem;
+    font-size: 1.125rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 45px;
+    color: var(--second-color);
+    background: var(--main-color);
+}
+#services .box-info p {
+    font-weight: 300;
+}
+/*! ****************************** Offer Section ****************************** */
+.offer {
+    background-image: linear-gradient(45deg, #33211de6, #33211de6), url(../images/bg.jpg);
+    background-size: cover;
+    position: relative;
+}
+.offer::before {
+    content: "";
+    background-image: url('../images/overlay-top.png');
+    width: 100%;
+    height: 15px;
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+.offer::after {
+    content: "";
+    background-image: url('../images/overlay-bottom.png');
+    width: 100%;
+    height: 15px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+.offer span {
+    font-size: 3.75rem;
+    font-weight: 700;
+    color: var(--main-color);
+}
+.offer h3 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+.offer p {
+    color: #fff;
+    font-size: 1.5625rem;
+}
+.offer button {
+    background-color: var(--main-color);
+    transition: .5s;
+    font-weight: 700;
+}
+.offer button:hover {
+    background-color: var(--hover-second-btn);
+}
+.offer input::placeholder {
+    color: #ffffffad;
+}
+/*! ****************************** Menu Section ****************************** */
+#menu .title h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+#menu .coffe .caption h4 {
+    color: var(--second-color);
+}
+#menu .coffe figure span {
+    content: "$5";
+    background-color: var(--main-color);
+    width: 40px;
+    height: 40px;
+    font-size: 1.125rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+/*! ****************************** Reservation Section ****************************** */
+#reservation .container {
+    background-image: linear-gradient(45deg, #33211de6, #33211de6), url("../images/bg.jpg");
+    position: relative;
+}
+#reservation .container::before {
+    content: "";
+    background-image: url("../images/overlay-top.png");
+    width: 100%;
+    height: 15px;
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+#reservation .container::after {
+    content: "";
+    background-image: url("../images/overlay-bottom.png");
+    width: 100%;
+    height: 15px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+#reservation span {
+    font-size: 3.75rem;
+    font-weight: 700;
+    color: var(--main-color);
+}
+#reservation h2 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #fff;
+}
+#reservation p {
+    color: #fff;
+}
+#reservation ul li h5 {
+    color: var(--main-color);
+}
+#reservation .col-md-6:last-of-type {
+    background-color: #33211dcc;
+}
+input {
+    color: #fff !important;
+}
+input::placeholder,
+input:nth-child(3),
+select.form-control {
+    color: #495057 !important;
+}
+input.form-control,
+select.form-control {
+    border-color: var(--main-color) !important;
+    background-color: transparent;
+}
+input.form-control:focus,
+select.form-control:focus {
+    box-shadow: 0 0 0 .25rem #da9f5b40;
+    background-color: transparent;
+}
+#reservation button {
+    background-color: var(--main-color);
+    transition: .5s;
+    font-weight: 700;
+}
+#reservation button:hover {
+    background-color: var(--hover-second-btn);
+}
+/*! ****************************** Testimonial Section ****************************** */
+.owl-carousel .item img {
+    width: 80px;
+    height: 80px;
+}
+.owl-theme .owl-dots .owl-dot span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background-color: var(--main-color);
+    transition: .5s;
+}
+.owl-theme .owl-dots .owl-dot.active span {
+    width: 40px;
+    background-color: #33211D;
+}
+/*! ****************************** Footer ****************************** */
+footer {
+    background-image: linear-gradient(45deg, #33211de6, #33211de6), url("../images/bg.jpg");
+    color: #fff !important;
+    position: relative;
+}
+footer::before {
+    content: "";
+    position: absolute;
+    background-image: url(../images/overlay-top.png);
+    width: 100%;
+    height: 15px;
+    left: 0;
+    top: -1px;
+}
+footer h4,
+footer h6,
+footer p,
+footer .row a {
+    color: #fff ;
+}
+footer .row h4 {
+    letter-spacing: 3px;
+}
+footer .row p {
+    line-height: 1.5;
+}
+footer .row a {
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: .5s;
+}
+footer .row a:hover {
+    background-color: #fff;
+    color: #000;
+}
+footer .row .input-group input {
+    background-color: #fff;
+}
+footer .row .input-group input:focus {
+    background-color: #fff;
+}
+footer .row .input-group button {
+    background-color: var(--main-color);
+    transition: .5s;
+    font-weight: 700;
+}
+footer .row .input-group button:hover {
+    background-color: var(--hover-second-btn);
+    color: #000;
+}
+footer .caption-footer {
+    border-top: 1px solid #ffffff1a;
+}
+footer .caption-footer a{
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+
+
+
+
+@media (max-width: 991px) {
+    .navbar {
+        background-color: #000000db !important;
+    }
+}
+@media (max-width: 768px) {
+    html {
+        font-size: 13px;
+    }
+}
+@media (max-width: 576px) {
+    html {
+        font-size: 10px;
+    }
+}
+@media (max-width: 480px) {
+    html {
+        font-size: 7px;
+    }
+    header .caption {
+        margin: 10px 0;
+    }
+}
